@@ -3,16 +3,16 @@ package parsers
 import (
 	"strings"
 
-	"github.com/razaibi/logernicus"
+	"logernicus/models"
 )
 
-func ParseSyslog(line string) logernicus.LogEntry {
+func ParseSyslog(line string) models.LogEntry {
 	parts := strings.SplitN(line, " ", 2)
 	if len(parts) < 2 {
-		return logernicus.LogEntry{}
+		return models.LogEntry{}
 	}
 
-	return logernicus.LogEntry{
+	return models.LogEntry{
 		Message: parts[1],
 	}
 }

@@ -3,12 +3,12 @@ package parsers
 import (
 	"strings"
 
-	"github.com/razaibi/logernicus"
+	"logernicus/models"
 )
 
-func ParseKV(line string) logernicus.LogEntry {
+func ParseKV(line string) models.LogEntry {
 	fields := strings.Fields(line)
-	entry := logernicus.LogEntry{}
+	entry := models.LogEntry{}
 
 	for _, field := range fields {
 		parts := strings.SplitN(field, "=", 2)

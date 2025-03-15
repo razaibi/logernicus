@@ -5,24 +5,24 @@ import (
 	"regexp"
 	"strconv"
 
-	"github.com/razaibi/logernicus"
+	"logernicus/models"
 )
 
 // Regular expression to match Apache/Nginx access logs
 var apacheRegex = regexp.MustCompile(`^(\S+) - (\S+) \[(.*?)\] "(\S+) (.*?) (\S+)" (\d+) (\d+) "(.*?)" "(.*?)"$`)
 
 // ParseApache parses an Apache/Nginx access log line into a LogEntry struct
-func ParseApache(line string) logernicus.LogEntry {
+func ParseApache(line string) models.LogEntry {
 	matches := apacheRegex.FindStringSubmatch(line)
 	if matches == nil {
-		return logernicus.LogEntry{}
+		return models.LogEntry{}
 	}
 
 	// Convert status code and bytes sent to integers
 	status, _ := strconv.Atoi(matches[7])
 	bytesSent, _ := strconv.Atoi(matches[8])
 
-	return logernicus.LogEntry{
+	return models.LogEntry{
 		IP:         matches[1],
 		Timestamp:  matches[3],
 		Request:    fmt.Sprintf("%s %s", matches[4], matches[5]),

@@ -5,22 +5,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/razaibi/logernicus/parsers"
+	"logernicus/models"
+	"logernicus/parsers"
 )
 
-// LogEntry represents a generic log entry
-type LogEntry struct {
-	Timestamp  string
-	Level      string
-	Message    string
-	IP         string
-	UserAgent  string
-	Request    string
-	StatusCode int
-}
-
 // ReadLogFile automatically detects and parses a log file
-func ReadLogFile(filename string) ([]LogEntry, error) {
+func ReadLogFile(filename string) ([]models.LogEntry, error) {
 	file, err := os.Open(filename)
 	if err != nil {
 		return nil, err
@@ -29,14 +19,14 @@ func ReadLogFile(filename string) ([]LogEntry, error) {
 
 	scanner := bufio.NewScanner(file)
 
-	var entries []LogEntry
+	var entries []models.LogEntry
 	for scanner.Scan() {
 		line := scanner.Text()
 
 		// Identify log format
 		format := detectFormat(line)
 
-		var entry LogEntry
+		var entry models.LogEntry
 		switch format {
 		case "clf":
 			entry = parsers.ParseCLF(line)
