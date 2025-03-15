@@ -62,13 +62,13 @@ timestamp=2025-03-10T14:32:14Z level=INFO user=frank event="User logged in" ip=1
 To use `logernicus`, install it via `go get`:
 
 ```sh
-go get github.com/user/logernicus
+go get github.com/razaibi/logernicus
 ```
 
 Then, import the package in your project:
 
 ```go
-import "github.com/user/logernicus"
+import "github.com/razaibi/logernicus"
 ```
 
 ---
@@ -82,7 +82,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/user/logernicus"
+	"github.com/razaibi/logernicus"
 )
 
 func main() {
@@ -137,7 +137,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/user/logernicus/parsers"
+	"github.com/razaibi/logernicus/parsers"
 )
 
 func main() {
