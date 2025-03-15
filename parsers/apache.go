@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strconv"
 
-	"logernicus/models"
+	"github.com/razaibi/logernicus/models"
 )
 
 // Regular expression to match Apache/Nginx access logs

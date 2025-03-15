@@ -3,7 +3,7 @@ package parsers
 import (
 	"strings"
 
-	"logernicus/models"
+	"github.com/razaibi/logernicus/models"
 )
 
 func ParseSyslog(line string) models.LogEntry {

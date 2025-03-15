@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"logernicus/models"
-	"logernicus/parsers"
+	"github.com/razaibi/logernicus/models"
+	"github.com/razaibi/logernicus/parsers"
 )
 
 // ReadLogFile automatically detects and parses a log file

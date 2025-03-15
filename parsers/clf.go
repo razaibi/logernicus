@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strconv"
 
-	"logernicus/models"
+	"github.com/razaibi/logernicus/models"
 )
 
 var clfRegex = regexp.MustCompile(`^(\S+) - (\S+) \[(.*?)\] "(\S+) (.*?) (\S+)" (\d+) (\d+|-)$`)

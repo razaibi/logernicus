@@ -3,7 +3,7 @@ package parsers
 import (
 	"encoding/json"
 
-	"logernicus/models"
+	"github.com/razaibi/logernicus/models"
 )
 
 func ParseJSON(line string) models.LogEntry {
